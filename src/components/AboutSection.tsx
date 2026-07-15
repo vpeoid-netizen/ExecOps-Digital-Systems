@@ -58,11 +58,20 @@ export function AboutSection() {
               Institutional coordination, digitally connected
             </h2>
             <p className="relative mt-5 text-base leading-relaxed text-[var(--eo-muted)] sm:text-lg">
-              The Office of the Vice President for Executive Operations and
-              Institutional Development coordinates institutional planning,
-              performance monitoring, administrative systems, organizational
-              development, and other strategic initiatives that support the
-              effective and responsive governance of Partido State University.
+              Institutionalized through BOR Resolution No. 35, s. 2025, the Office
+              of the Vice President for Executive Operations and Institutional
+              Development leads the integration of institutional planning,
+              performance monitoring, quality assurance, administrative systems,
+              organizational development, and strategic initiatives to strengthen
+              effective, accountable, and responsive governance at Partido State
+              University.
+            </p>
+            <p className="relative mt-4 text-base leading-relaxed text-[var(--eo-muted)] sm:text-lg">
+              These digital systems are a manifestation of the Office’s
+              commitment to lead in innovation by connecting essential
+              institutional platforms, enabling evidence-based decision-making,
+              improving coordination and service delivery, and advancing a more
+              efficient, transparent, and performance-driven University.
             </p>
           </div>
 
