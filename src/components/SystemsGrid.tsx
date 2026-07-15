@@ -30,25 +30,25 @@ export function SystemsGrid() {
     <section
       id="digital-systems"
       aria-labelledby="systems-heading"
-      className="scroll-mt-28 py-16 sm:py-20 lg:py-24"
+      className="scroll-mt-24 py-16 sm:py-20 lg:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="md-card mx-auto max-w-3xl rounded-3xl px-6 py-8 text-center sm:px-8">
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--eo-dark-gold)]">
-            Systems directory
+            Card catalog
           </p>
           <h2
             id="systems-heading"
-            className="font-display mt-3 text-[clamp(1.85rem,3.6vw,2.75rem)] font-bold tracking-tight text-[var(--eo-navy)]"
+            className="font-display mt-2 text-[clamp(1.8rem,3.5vw,2.7rem)] font-bold text-[var(--eo-navy)]"
           >
-            Choose a platform to open
+            Digital Systems and Platforms
           </h2>
           <p className="mt-3 text-base leading-relaxed text-[var(--eo-muted)] sm:text-lg">
-            Tap a card to launch the system in a new browser tab.
+            Select a card to open the matching Executive Operations service.
           </p>
         </div>
 
-        <div className="mt-9 flex justify-center">
+        <div className="mt-8 flex justify-center">
           <CategoryFilter active={activeFilter} onChange={setActiveFilter} />
         </div>
 

@@ -7,20 +7,24 @@ import { cn } from "@/lib/utils";
 
 const accentStyles = {
   gold: {
-    icon: "bg-[rgba(247,185,24,0.2)] text-[var(--eo-dark-gold)]",
-    ring: "group-hover:shadow-[0_0_0_3px_rgba(247,185,24,0.25)]",
+    media: "bg-[linear-gradient(145deg,#FFF6D6_0%,#F7B918_120%)]",
+    icon: "text-[var(--eo-dark-gold)]",
+    shape: "bg-[rgba(247,185,24,0.35)]",
   },
   blue: {
-    icon: "bg-[rgba(48,78,112,0.12)] text-[var(--eo-slate)]",
-    ring: "group-hover:shadow-[0_0_0_3px_rgba(48,78,112,0.18)]",
+    media: "bg-[linear-gradient(145deg,#E8F0FA_0%,#A8C0DC_100%)]",
+    icon: "text-[var(--eo-slate)]",
+    shape: "bg-[rgba(48,78,112,0.2)]",
   },
   amber: {
-    icon: "bg-[rgba(247,185,24,0.26)] text-[var(--eo-dark-gold)]",
-    ring: "group-hover:shadow-[0_0_0_3px_rgba(164,123,0,0.2)]",
+    media: "bg-[linear-gradient(145deg,#FFF3D0_0%,#E8B84A_100%)]",
+    icon: "text-[var(--eo-dark-gold)]",
+    shape: "bg-[rgba(164,123,0,0.22)]",
   },
   slate: {
-    icon: "bg-[rgba(16,41,77,0.1)] text-[var(--eo-dark-blue)]",
-    ring: "group-hover:shadow-[0_0_0_3px_rgba(16,41,77,0.16)]",
+    media: "bg-[linear-gradient(145deg,#E6ECF4_0%,#8FA7C4_100%)]",
+    icon: "text-[var(--eo-dark-blue)]",
+    shape: "bg-[rgba(16,41,77,0.18)]",
   },
 } as const;
 
@@ -38,13 +42,13 @@ export function SystemCard({ system, index = 0, compact = false }: SystemCardPro
   return (
     <article
       className={cn(
-        "group relative flex h-full",
+        "group flex h-full",
         !reduceMotion && "animate-fade-up",
       )}
       style={
         reduceMotion
           ? undefined
-          : { animationDelay: `${Math.min(index, 6) * 45}ms` }
+          : { animationDelay: `${Math.min(index, 6) * 40}ms` }
       }
     >
       <a
@@ -53,40 +57,53 @@ export function SystemCard({ system, index = 0, compact = false }: SystemCardPro
         rel="noopener noreferrer"
         aria-label={`Open ${system.title} in a new tab`}
         className={cn(
-          "soft-card soft-card-hover relative flex h-full w-full flex-col overflow-hidden rounded-[1.5rem] p-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--eo-gold)] focus-visible:ring-offset-2 sm:p-6",
-          "motion-reduce:transform-none",
-          accent.ring,
-          compact ? "min-h-[230px]" : "min-h-[270px]",
+          "md-card flex h-full w-full flex-col overflow-hidden rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--eo-gold)] focus-visible:ring-offset-2",
+          "hover:-translate-y-1 motion-reduce:transform-none",
+          compact ? "min-h-[250px]" : "min-h-[300px]",
         )}
       >
-        <div className="mb-4 flex items-start justify-between gap-3">
+        {/* Illustrative media area */}
+        <div className={cn("relative h-28 overflow-hidden sm:h-32", accent.media)}>
           <span
             className={cn(
-              "soft-chip inline-flex h-12 w-12 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-105",
+              "absolute -right-4 -top-6 h-28 w-28 rounded-[40%_60%_55%_45%] opacity-70",
+              accent.shape,
+            )}
+            aria-hidden="true"
+          />
+          <span
+            className={cn(
+              "absolute -bottom-8 left-8 h-24 w-24 rounded-[55%_45%_60%_40%] opacity-50",
+              accent.shape,
+            )}
+            aria-hidden="true"
+          />
+          <span
+            className={cn(
+              "absolute bottom-4 left-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-[var(--md-elev-1)]",
               accent.icon,
             )}
           >
-            <Icon className="h-5 w-5" aria-hidden="true" />
+            <Icon className="h-6 w-6" aria-hidden="true" />
           </span>
-          <span className="soft-chip rounded-full px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wide text-[var(--eo-slate)]">
+          <span className="absolute bottom-5 right-4 rounded-full bg-white/90 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-[var(--eo-slate)] shadow-sm">
             {system.category}
           </span>
         </div>
 
-        <h3 className="font-display text-[1.2rem] font-semibold leading-snug text-[var(--eo-navy)] sm:text-[1.3rem]">
-          {system.title}
-        </h3>
-        <p className="mt-2.5 flex-1 text-[15px] leading-relaxed text-[var(--eo-muted)]">
-          {system.description}
-        </p>
+        <div className="flex flex-1 flex-col p-5 sm:p-6">
+          <h3 className="font-display text-[1.15rem] font-semibold leading-snug text-[var(--eo-navy)] sm:text-[1.25rem]">
+            {system.title}
+          </h3>
+          <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--eo-muted)] sm:text-[15px]">
+            {system.description}
+          </p>
 
-        <span className="soft-inset mt-5 inline-flex min-h-12 items-center justify-between gap-2 rounded-2xl px-4 text-sm font-semibold text-[var(--eo-navy)] transition-colors group-hover:bg-white/80">
-          <span>Open system</span>
-          <ExternalLink
-            className="h-4 w-4 text-[var(--eo-slate)] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-            aria-hidden="true"
-          />
-        </span>
+          <span className="mt-5 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[var(--eo-navy)] px-4 text-sm font-semibold text-white transition-colors group-hover:bg-[var(--eo-dark-blue)]">
+            Open system
+            <ExternalLink className="h-4 w-4" aria-hidden="true" />
+          </span>
+        </div>
       </a>
     </article>
   );

@@ -1,36 +1,35 @@
 @import "tailwindcss";
 
 :root {
+  /* Brand */
   --eo-navy: #071f46;
   --eo-dark-blue: #10294d;
   --eo-slate: #304e70;
   --eo-gold: #f7b918;
   --eo-dark-gold: #a47b00;
-  --eo-white: #ffffff;
-  --eo-surface: #e6ecf4;
-  --eo-text: #142038;
-  --eo-muted: #5a6a82;
-  --background: var(--eo-surface);
+  --eo-text: #1a2336;
+  --eo-muted: #5c6b82;
+
+  /* Material surface system */
+  --md-surface: #f4f6fa;
+  --md-surface-dim: #e8edf5;
+  --md-surface-container: #ffffff;
+  --md-surface-container-low: #f8fafc;
+  --md-surface-container-high: #eef2f8;
+  --md-primary: #071f46;
+  --md-on-primary: #ffffff;
+  --md-secondary: #f7b918;
+  --md-on-secondary: #071f46;
+  --md-outline: #c9d4e3;
+  --md-outline-variant: #dde5ef;
+
+  /* Material elevation */
+  --md-elev-1: 0 1px 2px rgba(7, 31, 70, 0.06), 0 1px 3px rgba(7, 31, 70, 0.1);
+  --md-elev-2: 0 2px 6px rgba(7, 31, 70, 0.08), 0 4px 12px rgba(7, 31, 70, 0.1);
+  --md-elev-3: 0 4px 10px rgba(7, 31, 70, 0.1), 0 10px 24px rgba(7, 31, 70, 0.12);
+
+  --background: var(--md-surface);
   --foreground: var(--eo-text);
-
-  /* Soft UI / neumorphism base */
-  --neo-bg: #e6ecf4;
-  --neo-light: #ffffff;
-  --neo-dark: #c5d0e0;
-  --neo-shadow-out:
-    10px 10px 24px rgba(155, 172, 196, 0.45),
-    -8px -8px 20px rgba(255, 255, 255, 0.95);
-  --neo-shadow-out-hover:
-    14px 14px 30px rgba(155, 172, 196, 0.5),
-    -10px -10px 24px rgba(255, 255, 255, 1);
-  --neo-shadow-in:
-    inset 6px 6px 14px rgba(155, 172, 196, 0.35),
-    inset -5px -5px 12px rgba(255, 255, 255, 0.9);
-
-  /* Glass */
-  --glass-bg: rgba(255, 255, 255, 0.48);
-  --glass-bg-strong: rgba(255, 255, 255, 0.68);
-  --glass-border: rgba(255, 255, 255, 0.78);
 }
 
 @theme inline {
@@ -41,11 +40,11 @@
   --color-eo-slate: var(--eo-slate);
   --color-eo-gold: var(--eo-gold);
   --color-eo-dark-gold: var(--eo-dark-gold);
-  --color-eo-surface: var(--eo-surface);
-  --color-eo-border: #d5deea;
+  --color-eo-surface: var(--md-surface);
+  --color-eo-border: var(--md-outline);
   --color-eo-text: var(--eo-text);
   --color-eo-muted: var(--eo-muted);
-  --font-sans: var(--font-figtree);
+  --font-sans: var(--font-jakarta);
   --font-display: var(--font-outfit);
 }
 
@@ -62,8 +61,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-figtree), "Figtree", sans-serif;
-  letter-spacing: 0.01em;
+  font-family: var(--font-jakarta), "Plus Jakarta Sans", sans-serif;
 }
 
 ::selection {
@@ -78,13 +76,13 @@ body {
 
 .font-display {
   font-family: var(--font-outfit), "Outfit", sans-serif;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -93,7 +91,7 @@ body {
 }
 
 .animate-fade-up {
-  animation: fade-up 0.45s ease-out both;
+  animation: fade-up 0.4s ease-out both;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -102,117 +100,69 @@ body {
   }
 }
 
-.page-atmosphere {
+/* Material surfaces */
+.md-surface {
+  background: var(--md-surface);
+}
+
+.md-card {
+  background: var(--md-surface-container);
+  border: 1px solid var(--md-outline-variant);
+  box-shadow: var(--md-elev-1);
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.md-card:hover {
+  box-shadow: var(--md-elev-3);
+  border-color: color-mix(in srgb, var(--eo-navy) 18%, var(--md-outline-variant));
+}
+
+.md-card-flat {
+  background: var(--md-surface-container);
+  border: 1px solid var(--md-outline-variant);
+}
+
+.md-chip {
+  background: var(--md-surface-container-high);
+  border: 1px solid var(--md-outline);
+  color: var(--eo-slate);
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.md-chip[aria-pressed="true"],
+.md-chip-active {
+  background: var(--eo-navy);
+  border-color: var(--eo-navy);
+  color: white;
+  box-shadow: var(--md-elev-1);
+}
+
+.md-chip:hover:not([aria-pressed="true"]) {
+  background: color-mix(in srgb, var(--eo-navy) 6%, white);
+  border-color: color-mix(in srgb, var(--eo-navy) 20%, var(--md-outline));
+}
+
+/* Illustrative scene helpers */
+.illustrative-scene {
   position: relative;
-  isolation: isolate;
   overflow: hidden;
   background:
-    radial-gradient(ellipse 70% 45% at 0% 10%, rgba(247, 185, 24, 0.14), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(48, 78, 112, 0.12), transparent 50%),
-    radial-gradient(ellipse 50% 35% at 50% 100%, rgba(255, 255, 255, 0.7), transparent 60%),
-    var(--neo-bg);
+    radial-gradient(ellipse 80% 50% at 100% 0%, rgba(247, 185, 24, 0.1), transparent 50%),
+    radial-gradient(ellipse 60% 40% at 0% 100%, rgba(48, 78, 112, 0.08), transparent 50%),
+    var(--md-surface);
 }
 
-.page-atmosphere > * {
-  position: relative;
-  z-index: 1;
-}
-
-/* Soft raised surface (neumorphism) with glass sheen */
-.soft-card {
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.72) 0%,
-    rgba(255, 255, 255, 0.42) 100%
-  );
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  box-shadow: var(--neo-shadow-out);
-  backdrop-filter: blur(16px) saturate(150%);
-  -webkit-backdrop-filter: blur(16px) saturate(150%);
-}
-
-.soft-card-hover {
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
-}
-
-.soft-card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--neo-shadow-out-hover);
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.88) 0%,
-    rgba(255, 255, 255, 0.58) 100%
-  );
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .soft-card-hover,
-  .soft-card-hover:hover {
-    transform: none;
-  }
-}
-
-.soft-inset {
-  background: rgba(230, 236, 244, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  box-shadow: var(--neo-shadow-in);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.glass-panel {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--neo-shadow-out);
-  backdrop-filter: blur(18px) saturate(160%);
-  -webkit-backdrop-filter: blur(18px) saturate(160%);
-}
-
-.glass-panel-strong {
-  background: var(--glass-bg-strong);
-  border: 1px solid rgba(255, 255, 255, 0.88);
-  box-shadow:
-    var(--neo-shadow-out),
-    inset 0 1px 0 rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(22px) saturate(170%);
-  -webkit-backdrop-filter: blur(22px) saturate(170%);
-}
-
-.glass-dark {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow:
-    12px 12px 32px rgba(0, 0, 0, 0.28),
-    -4px -4px 18px rgba(255, 255, 255, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(22px) saturate(150%);
-  -webkit-backdrop-filter: blur(22px) saturate(150%);
-}
-
-.soft-chip {
-  background: rgba(255, 255, 255, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow:
-    3px 3px 8px rgba(155, 172, 196, 0.25),
-    -2px -2px 6px rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.hero-grid {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 44px 44px;
-  mask-image: radial-gradient(ellipse at center, black 25%, transparent 78%);
-}
-
-.hero-orb {
+.illust-blob {
   position: absolute;
-  border-radius: 9999px;
-  filter: blur(48px);
+  border-radius: 40% 60% 55% 45%;
+  filter: blur(2px);
   pointer-events: none;
+  opacity: 0.55;
 }

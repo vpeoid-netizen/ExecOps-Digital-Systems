@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Figtree, Outfit } from "next/font/google";
+import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import "./globals.css";
 
-const figtree = Figtree({
-  variable: "--font-figtree",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
   display: "swap",
 });
@@ -49,12 +49,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${figtree.variable} ${outfit.variable} h-full antialiased`}
+      className={`${jakarta.variable} ${outfit.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans text-[var(--eo-text)]">
         <a
           href="#digital-systems"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-2xl focus:bg-white focus:px-4 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-[var(--eo-navy)] focus:shadow-lg"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-white focus:px-4 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-[var(--eo-navy)] focus:shadow-lg"
         >
           Skip to digital systems
         </a>

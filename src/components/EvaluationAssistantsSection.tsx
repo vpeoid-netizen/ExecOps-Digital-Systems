@@ -8,23 +8,23 @@ export function EvaluationAssistantsSection() {
     <section
       id="evaluation-assistants"
       aria-labelledby="evaluation-heading"
-      className="scroll-mt-28 py-12 sm:py-16 lg:py-20"
+      className="scroll-mt-24 py-12 sm:py-16"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="soft-card rounded-[1.75rem] p-6 sm:p-8 lg:p-10">
+        <div className="rounded-[2rem] border border-[var(--md-outline-variant)] bg-[var(--md-surface-container-high)] p-6 shadow-[var(--md-elev-1)] sm:p-8 lg:p-10">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--eo-slate)]">
-              Performance evaluation
+              Featured cards
             </p>
             <h2
               id="evaluation-heading"
-              className="font-display mt-3 text-[clamp(1.7rem,3.2vw,2.45rem)] font-bold tracking-tight text-[var(--eo-navy)]"
+              className="font-display mt-2 text-[clamp(1.65rem,3.2vw,2.4rem)] font-bold text-[var(--eo-navy)]"
             >
-              IPCR and OPCR assistants
+              IPCR and OPCR Evaluation Assistants
             </h2>
             <p className="mt-3 text-base leading-relaxed text-[var(--eo-muted)] sm:text-lg">
-              Pick the assistant that matches teaching, non-teaching, or
-              organizational evaluation.
+              Choose the evaluation assistant for teaching personnel,
+              non-teaching personnel, or organizational commitments.
             </p>
           </div>
 

@@ -5,13 +5,11 @@ import { AboutSection } from "@/components/AboutSection";
 
 export default function Home() {
   return (
-    <>
+    <div className="illustrative-scene">
       <HeroSection />
-      <div className="page-atmosphere">
-        <SystemsGrid />
-        <EvaluationAssistantsSection />
-        <AboutSection />
-      </div>
-    </>
+      <SystemsGrid />
+      <EvaluationAssistantsSection />
+      <AboutSection />
+    </div>
   );
 }
