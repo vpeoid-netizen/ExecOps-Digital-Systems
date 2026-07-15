@@ -5,12 +5,10 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { digitalSystems } from "@/data/systems";
 import { HeroIllustration } from "@/components/HeroIllustration";
 
 export function HeroSection() {
   const reduceMotion = useReducedMotion();
-  const platformCount = digitalSystems.length;
 
   return (
     <section
@@ -79,23 +77,6 @@ export function HeroSection() {
             >
               About the office
             </a>
-          </div>
-
-          <div className="mt-8 grid max-w-md grid-cols-2 gap-3">
-            <div className="rounded-2xl border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-sm">
-              <p className="font-display text-2xl font-bold text-[var(--eo-gold)]">
-                {platformCount}
-              </p>
-              <p className="mt-0.5 text-xs font-medium text-white/70">
-                Digital platforms
-              </p>
-            </div>
-            <div className="rounded-2xl border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-sm">
-              <p className="font-display text-2xl font-bold text-white">1</p>
-              <p className="mt-0.5 text-xs font-medium text-white/70">
-                Central launcher
-              </p>
-            </div>
           </div>
         </motion.div>
 
