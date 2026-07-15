@@ -6,18 +6,18 @@ import { cn } from "@/lib/utils";
 
 const values = [
   {
-    title: "Integrated Systems",
+    title: "Integrated systems",
     description: "Centralized access to essential institutional platforms.",
     icon: Network,
   },
   {
-    title: "Performance-Driven",
+    title: "Performance-driven",
     description:
       "Digital tools that support monitoring, evaluation, and evidence-based action.",
     icon: LineChart,
   },
   {
-    title: "Responsive Governance",
+    title: "Responsive governance",
     description:
       "Systems designed to improve coordination, accountability, and service delivery.",
     icon: Landmark,
@@ -34,23 +34,23 @@ export function AboutSection() {
       className="scroll-mt-28 py-16 sm:py-20 lg:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-8 lg:grid-cols-[1fr_1.05fr] lg:items-start lg:gap-10">
+        <div className="grid gap-6 lg:grid-cols-[1.05fr_1fr] lg:gap-8">
           <div
             className={cn(
-              "glass-panel rounded-3xl p-6 sm:p-8",
+              "soft-card rounded-[1.75rem] p-6 sm:p-8",
               !reduceMotion && "animate-fade-up",
             )}
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--eo-dark-gold)]">
-              Institutional Mandate
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--eo-dark-gold)]">
+              About the office
             </p>
             <h2
               id="about-heading"
-              className="mt-3 font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-semibold tracking-tight text-[var(--eo-navy)]"
+              className="font-display mt-3 text-[clamp(1.8rem,3.4vw,2.6rem)] font-bold tracking-tight text-[var(--eo-navy)]"
             >
               About Executive Operations
             </h2>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-[var(--eo-muted)] sm:text-lg">
+            <p className="mt-5 text-base leading-relaxed text-[var(--eo-muted)] sm:text-lg">
               The Office of the Vice President for Executive Operations and
               Institutional Development coordinates institutional planning,
               performance monitoring, administrative systems, organizational
@@ -66,23 +66,23 @@ export function AboutSection() {
                 <div
                   key={value.title}
                   className={cn(
-                    "glass-panel flex gap-4 rounded-2xl p-5 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/70 sm:p-6",
+                    "soft-card soft-card-hover flex gap-4 rounded-[1.35rem] p-5 sm:p-6",
                     !reduceMotion && "animate-fade-up",
                   )}
                   style={
                     reduceMotion
                       ? undefined
-                      : { animationDelay: `${(index + 1) * 60}ms` }
+                      : { animationDelay: `${(index + 1) * 55}ms` }
                   }
                 >
-                  <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/60 bg-white/50 text-[var(--eo-navy)] backdrop-blur-sm">
+                  <span className="soft-chip inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-[var(--eo-navy)]">
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </span>
                   <div>
                     <h3 className="font-display text-lg font-semibold text-[var(--eo-navy)]">
                       {value.title}
                     </h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-[var(--eo-muted)]">
+                    <p className="mt-1 text-[15px] leading-relaxed text-[var(--eo-muted)]">
                       {value.description}
                     </p>
                   </div>

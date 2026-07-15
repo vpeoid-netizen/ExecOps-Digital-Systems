@@ -7,24 +7,20 @@ import { cn } from "@/lib/utils";
 
 const accentStyles = {
   gold: {
-    icon: "bg-[rgba(247,185,24,0.22)] text-[var(--eo-dark-gold)] border border-[rgba(247,185,24,0.35)]",
-    border: "hover:border-[rgba(247,185,24,0.65)] group-focus-within:border-[rgba(247,185,24,0.65)]",
-    bar: "bg-[var(--eo-gold)]",
+    icon: "bg-[rgba(247,185,24,0.2)] text-[var(--eo-dark-gold)]",
+    ring: "group-hover:shadow-[0_0_0_3px_rgba(247,185,24,0.25)]",
   },
   blue: {
-    icon: "bg-[rgba(48,78,112,0.14)] text-[var(--eo-slate)] border border-[rgba(48,78,112,0.2)]",
-    border: "hover:border-[rgba(48,78,112,0.45)] group-focus-within:border-[rgba(48,78,112,0.45)]",
-    bar: "bg-[var(--eo-slate)]",
+    icon: "bg-[rgba(48,78,112,0.12)] text-[var(--eo-slate)]",
+    ring: "group-hover:shadow-[0_0_0_3px_rgba(48,78,112,0.18)]",
   },
   amber: {
-    icon: "bg-[rgba(247,185,24,0.28)] text-[var(--eo-dark-gold)] border border-[rgba(164,123,0,0.25)]",
-    border: "hover:border-[rgba(164,123,0,0.45)] group-focus-within:border-[rgba(164,123,0,0.45)]",
-    bar: "bg-[var(--eo-dark-gold)]",
+    icon: "bg-[rgba(247,185,24,0.26)] text-[var(--eo-dark-gold)]",
+    ring: "group-hover:shadow-[0_0_0_3px_rgba(164,123,0,0.2)]",
   },
   slate: {
-    icon: "bg-[rgba(16,41,77,0.12)] text-[var(--eo-dark-blue)] border border-[rgba(16,41,77,0.18)]",
-    border: "hover:border-[rgba(16,41,77,0.4)] group-focus-within:border-[rgba(16,41,77,0.4)]",
-    bar: "bg-[var(--eo-dark-blue)]",
+    icon: "bg-[rgba(16,41,77,0.1)] text-[var(--eo-dark-blue)]",
+    ring: "group-hover:shadow-[0_0_0_3px_rgba(16,41,77,0.16)]",
   },
 } as const;
 
@@ -48,7 +44,7 @@ export function SystemCard({ system, index = 0, compact = false }: SystemCardPro
       style={
         reduceMotion
           ? undefined
-          : { animationDelay: `${Math.min(index, 6) * 50}ms` }
+          : { animationDelay: `${Math.min(index, 6) * 45}ms` }
       }
     >
       <a
@@ -57,44 +53,35 @@ export function SystemCard({ system, index = 0, compact = false }: SystemCardPro
         rel="noopener noreferrer"
         aria-label={`Open ${system.title} in a new tab`}
         className={cn(
-          "glass-panel relative flex h-full w-full flex-col overflow-hidden rounded-2xl p-5 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--eo-gold)] focus-visible:ring-offset-2 sm:p-6",
-          "hover:-translate-y-1.5 hover:bg-white/70 hover:shadow-[0_20px_48px_rgba(7,31,70,0.14)]",
-          "motion-reduce:transform-none motion-reduce:transition-none",
-          accent.border,
-          compact ? "min-h-[240px]" : "min-h-[280px]",
+          "soft-card soft-card-hover relative flex h-full w-full flex-col overflow-hidden rounded-[1.5rem] p-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--eo-gold)] focus-visible:ring-offset-2 sm:p-6",
+          "motion-reduce:transform-none",
+          accent.ring,
+          compact ? "min-h-[230px]" : "min-h-[270px]",
         )}
       >
-        <span
-          className={cn(
-            "absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100 group-focus-within:scale-x-100",
-            accent.bar,
-          )}
-          aria-hidden="true"
-        />
-
         <div className="mb-4 flex items-start justify-between gap-3">
           <span
             className={cn(
-              "inline-flex h-11 w-11 items-center justify-center rounded-xl backdrop-blur-sm transition-transform duration-300 group-hover:scale-105",
+              "soft-chip inline-flex h-12 w-12 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-105",
               accent.icon,
             )}
           >
             <Icon className="h-5 w-5" aria-hidden="true" />
           </span>
-          <span className="glass-chip rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-[var(--eo-slate)]">
+          <span className="soft-chip rounded-full px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wide text-[var(--eo-slate)]">
             {system.category}
           </span>
         </div>
 
-        <h3 className="font-display text-xl font-semibold leading-snug tracking-tight text-[var(--eo-navy)] sm:text-[1.35rem]">
+        <h3 className="font-display text-[1.2rem] font-semibold leading-snug text-[var(--eo-navy)] sm:text-[1.3rem]">
           {system.title}
         </h3>
-        <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--eo-muted)] sm:text-[15px]">
+        <p className="mt-2.5 flex-1 text-[15px] leading-relaxed text-[var(--eo-muted)]">
           {system.description}
         </p>
 
-        <span className="mt-5 inline-flex min-h-11 items-center justify-between gap-2 rounded-xl border border-white/70 bg-white/45 px-4 text-sm font-semibold text-[var(--eo-navy)] backdrop-blur-md transition-colors group-hover:border-[var(--eo-gold)]/50 group-hover:bg-white/75">
-          <span>Open System</span>
+        <span className="soft-inset mt-5 inline-flex min-h-12 items-center justify-between gap-2 rounded-2xl px-4 text-sm font-semibold text-[var(--eo-navy)] transition-colors group-hover:bg-white/80">
+          <span>Open system</span>
           <ExternalLink
             className="h-4 w-4 text-[var(--eo-slate)] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
             aria-hidden="true"

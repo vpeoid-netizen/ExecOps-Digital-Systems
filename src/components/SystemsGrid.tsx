@@ -33,23 +33,22 @@ export function SystemsGrid() {
       className="scroll-mt-28 py-16 sm:py-20 lg:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="glass-panel mx-auto max-w-3xl rounded-3xl px-6 py-8 text-center sm:px-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--eo-dark-gold)]">
-            Systems Directory
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--eo-dark-gold)]">
+            Systems directory
           </p>
           <h2
             id="systems-heading"
-            className="mt-3 font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-semibold tracking-tight text-[var(--eo-navy)]"
+            className="font-display mt-3 text-[clamp(1.85rem,3.6vw,2.75rem)] font-bold tracking-tight text-[var(--eo-navy)]"
           >
-            Digital Systems and Platforms
+            Choose a platform to open
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-[var(--eo-muted)] sm:text-lg">
-            Select a platform to access the corresponding Executive Operations
-            service.
+          <p className="mt-3 text-base leading-relaxed text-[var(--eo-muted)] sm:text-lg">
+            Tap a card to launch the system in a new browser tab.
           </p>
         </div>
 
-        <div className="mt-10 flex justify-center">
+        <div className="mt-9 flex justify-center">
           <CategoryFilter active={activeFilter} onChange={setActiveFilter} />
         </div>
 

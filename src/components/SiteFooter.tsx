@@ -8,12 +8,12 @@ export function SiteFooter() {
   return (
     <footer className="relative overflow-hidden bg-[var(--eo-navy)] text-white">
       <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,rgba(247,185,24,0.12),transparent_45%),radial-gradient(ellipse_at_90%_80%,rgba(96,140,190,0.18),transparent_40%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_15%_0%,rgba(247,185,24,0.14),transparent_45%),radial-gradient(ellipse_at_90%_90%,rgba(96,140,190,0.2),transparent_40%)]"
         aria-hidden="true"
       />
-      <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
-        <div className="glass-dark rounded-3xl p-6 sm:p-8 lg:p-10">
-          <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+      <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-14">
+        <div className="glass-dark rounded-[1.75rem] p-6 sm:p-8 lg:p-10">
+          <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-14">
             <div>
               <div className="flex items-center gap-3">
                 <Image
@@ -31,21 +31,21 @@ export function SiteFooter() {
                   className="h-12 w-12 object-contain"
                 />
               </div>
-              <p className="mt-5 max-w-md font-display text-xl font-semibold leading-snug text-white">
+              <p className="font-display mt-5 max-w-md text-xl font-semibold leading-snug text-white">
                 Office of the Vice President for Executive Operations and
                 Institutional Development
               </p>
               <p className="mt-2 text-sm text-white/70">Partido State University</p>
-              <p className="mt-4 text-sm font-medium text-[var(--eo-gold)]">
+              <p className="mt-4 text-sm font-semibold text-[var(--eo-gold)]">
                 Executive Operations Digital Systems
               </p>
             </div>
 
             <div>
-              <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-white/55">
-                Quick Links
+              <h2 className="text-xs font-bold uppercase tracking-[0.14em] text-white/55">
+                Quick links
               </h2>
-              <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+              <ul className="mt-4 grid gap-1.5 sm:grid-cols-2">
                 {digitalSystems.map((system) => (
                   <li key={system.id}>
                     <a
@@ -53,7 +53,7 @@ export function SiteFooter() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Open ${system.title} in a new tab`}
-                      className="group inline-flex min-h-11 items-center gap-2 rounded-xl px-2 py-2 text-sm text-white/80 transition-colors hover:bg-white/10 hover:text-[var(--eo-gold)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--eo-gold)]"
+                      className="group inline-flex min-h-11 w-full items-center gap-2 rounded-xl px-2.5 py-2 text-sm font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-[var(--eo-gold)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--eo-gold)]"
                     >
                       <ExternalLink
                         className="h-3.5 w-3.5 shrink-0 opacity-60 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
