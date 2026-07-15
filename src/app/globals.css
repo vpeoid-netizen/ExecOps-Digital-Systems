@@ -1,26 +1,101 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --eo-navy: #071f46;
+  --eo-dark-blue: #10294d;
+  --eo-slate: #304e70;
+  --eo-gold: #f7b918;
+  --eo-dark-gold: #a47b00;
+  --eo-white: #ffffff;
+  --eo-surface: #f7f9fc;
+  --eo-border: #dce4ee;
+  --eo-text: #172033;
+  --eo-muted: #64748b;
+  --background: var(--eo-surface);
+  --foreground: var(--eo-text);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-eo-navy: var(--eo-navy);
+  --color-eo-dark-blue: var(--eo-dark-blue);
+  --color-eo-slate: var(--eo-slate);
+  --color-eo-gold: var(--eo-gold);
+  --color-eo-dark-gold: var(--eo-dark-gold);
+  --color-eo-surface: var(--eo-surface);
+  --color-eo-border: var(--eo-border);
+  --color-eo-text: var(--eo-text);
+  --color-eo-muted: var(--eo-muted);
+  --font-sans: var(--font-source-sans);
+  --font-display: var(--font-newsreader);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-source-sans), "Source Sans 3", sans-serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--eo-gold) 35%, white);
+  color: var(--eo-navy);
+}
+
+:focus-visible {
+  outline: 2px solid var(--eo-gold);
+  outline-offset: 3px;
+}
+
+.font-display {
+  font-family: var(--font-newsreader), "Newsreader", Georgia, serif;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.45s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up {
+    animation: none;
+  }
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
+}
+
+.hero-ribbon {
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(247, 185, 24, 0.08) 35%,
+    rgba(48, 78, 112, 0.2) 55%,
+    transparent 80%
+  );
 }
