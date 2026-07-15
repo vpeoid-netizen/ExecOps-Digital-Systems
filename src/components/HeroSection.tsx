@@ -42,10 +42,8 @@ export function HeroSection() {
               priority
             />
             <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--eo-gold)] sm:text-[13px]">
-              Office of the Vice President for Executive Operations
-              <span className="mt-0.5 block font-medium tracking-normal text-white/65 normal-case">
-                and Institutional Development
-              </span>
+              Office of the Vice President for Executive Operations and
+              Institutional Development
             </p>
           </div>
 
