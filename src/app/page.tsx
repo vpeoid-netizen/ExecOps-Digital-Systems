@@ -7,9 +7,11 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <SystemsGrid />
-      <EvaluationAssistantsSection />
-      <AboutSection />
+      <div className="page-atmosphere">
+        <SystemsGrid />
+        <EvaluationAssistantsSection />
+        <AboutSection />
+      </div>
     </>
   );
 }

@@ -8,10 +8,10 @@ export function EvaluationAssistantsSection() {
     <section
       id="evaluation-assistants"
       aria-labelledby="evaluation-heading"
-      className="scroll-mt-24 bg-white py-16 sm:py-20 lg:py-24"
+      className="scroll-mt-28 py-16 sm:py-20 lg:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-[1.75rem] border border-[var(--eo-border)] bg-[linear-gradient(180deg,#ffffff_0%,#f7f9fc_100%)] p-6 shadow-[0_12px_40px_rgba(7,31,70,0.05)] sm:p-8 lg:p-10">
+        <div className="glass-panel-strong rounded-[1.75rem] p-6 sm:p-8 lg:p-10">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--eo-slate)]">
               Performance Evaluation

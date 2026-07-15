@@ -31,11 +31,16 @@ export function AboutSection() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="scroll-mt-24 bg-[var(--eo-surface)] py-16 sm:py-20 lg:py-24"
+      className="scroll-mt-28 py-16 sm:py-20 lg:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.05fr] lg:items-start lg:gap-16">
-          <div className={cn(!reduceMotion && "animate-fade-up")}>
+        <div className="grid gap-8 lg:grid-cols-[1fr_1.05fr] lg:items-start lg:gap-10">
+          <div
+            className={cn(
+              "glass-panel rounded-3xl p-6 sm:p-8",
+              !reduceMotion && "animate-fade-up",
+            )}
+          >
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--eo-dark-gold)]">
               Institutional Mandate
             </p>
@@ -61,7 +66,7 @@ export function AboutSection() {
                 <div
                   key={value.title}
                   className={cn(
-                    "flex gap-4 rounded-2xl border border-[var(--eo-border)] bg-white p-5 shadow-[0_6px_20px_rgba(7,31,70,0.03)] sm:p-6",
+                    "glass-panel flex gap-4 rounded-2xl p-5 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/70 sm:p-6",
                     !reduceMotion && "animate-fade-up",
                   )}
                   style={
@@ -70,7 +75,7 @@ export function AboutSection() {
                       : { animationDelay: `${(index + 1) * 60}ms` }
                   }
                 >
-                  <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[color-mix(in_srgb,var(--eo-navy)_8%,white)] text-[var(--eo-navy)]">
+                  <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/60 bg-white/50 text-[var(--eo-navy)] backdrop-blur-sm">
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </span>
                   <div>

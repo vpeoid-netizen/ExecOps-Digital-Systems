@@ -7,23 +7,23 @@ import { cn } from "@/lib/utils";
 
 const accentStyles = {
   gold: {
-    icon: "bg-[color-mix(in_srgb,var(--eo-gold)_18%,white)] text-[var(--eo-dark-gold)]",
-    border: "hover:border-[var(--eo-gold)]/55 group-focus-within:border-[var(--eo-gold)]/55",
+    icon: "bg-[rgba(247,185,24,0.22)] text-[var(--eo-dark-gold)] border border-[rgba(247,185,24,0.35)]",
+    border: "hover:border-[rgba(247,185,24,0.65)] group-focus-within:border-[rgba(247,185,24,0.65)]",
     bar: "bg-[var(--eo-gold)]",
   },
   blue: {
-    icon: "bg-[color-mix(in_srgb,var(--eo-slate)_14%,white)] text-[var(--eo-slate)]",
-    border: "hover:border-[var(--eo-slate)]/45 group-focus-within:border-[var(--eo-slate)]/45",
+    icon: "bg-[rgba(48,78,112,0.14)] text-[var(--eo-slate)] border border-[rgba(48,78,112,0.2)]",
+    border: "hover:border-[rgba(48,78,112,0.45)] group-focus-within:border-[rgba(48,78,112,0.45)]",
     bar: "bg-[var(--eo-slate)]",
   },
   amber: {
-    icon: "bg-[color-mix(in_srgb,var(--eo-gold)_22%,white)] text-[var(--eo-dark-gold)]",
-    border: "hover:border-[var(--eo-dark-gold)]/40 group-focus-within:border-[var(--eo-dark-gold)]/40",
+    icon: "bg-[rgba(247,185,24,0.28)] text-[var(--eo-dark-gold)] border border-[rgba(164,123,0,0.25)]",
+    border: "hover:border-[rgba(164,123,0,0.45)] group-focus-within:border-[rgba(164,123,0,0.45)]",
     bar: "bg-[var(--eo-dark-gold)]",
   },
   slate: {
-    icon: "bg-[color-mix(in_srgb,var(--eo-dark-blue)_12%,white)] text-[var(--eo-dark-blue)]",
-    border: "hover:border-[var(--eo-dark-blue)]/40 group-focus-within:border-[var(--eo-dark-blue)]/40",
+    icon: "bg-[rgba(16,41,77,0.12)] text-[var(--eo-dark-blue)] border border-[rgba(16,41,77,0.18)]",
+    border: "hover:border-[rgba(16,41,77,0.4)] group-focus-within:border-[rgba(16,41,77,0.4)]",
     bar: "bg-[var(--eo-dark-blue)]",
   },
 } as const;
@@ -57,8 +57,8 @@ export function SystemCard({ system, index = 0, compact = false }: SystemCardPro
         rel="noopener noreferrer"
         aria-label={`Open ${system.title} in a new tab`}
         className={cn(
-          "relative flex h-full w-full flex-col overflow-hidden rounded-2xl border border-[var(--eo-border)] bg-white p-5 shadow-[0_8px_24px_rgba(7,31,70,0.04)] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--eo-gold)] focus-visible:ring-offset-2 sm:p-6",
-          "hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(7,31,70,0.1)]",
+          "glass-panel relative flex h-full w-full flex-col overflow-hidden rounded-2xl p-5 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--eo-gold)] focus-visible:ring-offset-2 sm:p-6",
+          "hover:-translate-y-1.5 hover:bg-white/70 hover:shadow-[0_20px_48px_rgba(7,31,70,0.14)]",
           "motion-reduce:transform-none motion-reduce:transition-none",
           accent.border,
           compact ? "min-h-[240px]" : "min-h-[280px]",
@@ -75,13 +75,13 @@ export function SystemCard({ system, index = 0, compact = false }: SystemCardPro
         <div className="mb-4 flex items-start justify-between gap-3">
           <span
             className={cn(
-              "inline-flex h-11 w-11 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-105",
+              "inline-flex h-11 w-11 items-center justify-center rounded-xl backdrop-blur-sm transition-transform duration-300 group-hover:scale-105",
               accent.icon,
             )}
           >
             <Icon className="h-5 w-5" aria-hidden="true" />
           </span>
-          <span className="rounded-md bg-[var(--eo-surface)] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-[var(--eo-slate)]">
+          <span className="glass-chip rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-[var(--eo-slate)]">
             {system.category}
           </span>
         </div>
@@ -93,7 +93,7 @@ export function SystemCard({ system, index = 0, compact = false }: SystemCardPro
           {system.description}
         </p>
 
-        <span className="mt-5 inline-flex min-h-11 items-center justify-between gap-2 rounded-lg border border-[var(--eo-border)] bg-[var(--eo-surface)] px-4 text-sm font-semibold text-[var(--eo-navy)] transition-colors group-hover:border-[var(--eo-gold)]/50 group-hover:bg-white">
+        <span className="mt-5 inline-flex min-h-11 items-center justify-between gap-2 rounded-xl border border-white/70 bg-white/45 px-4 text-sm font-semibold text-[var(--eo-navy)] backdrop-blur-md transition-colors group-hover:border-[var(--eo-gold)]/50 group-hover:bg-white/75">
           <span>Open System</span>
           <ExternalLink
             className="h-4 w-4 text-[var(--eo-slate)] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"

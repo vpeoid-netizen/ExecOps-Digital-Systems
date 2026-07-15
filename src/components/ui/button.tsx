@@ -8,14 +8,14 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-[var(--eo-gold)] text-[var(--eo-navy)] hover:bg-[#e5aa10] focus-visible:ring-[var(--eo-gold)] shadow-sm",
+          "bg-[var(--eo-gold)] text-[var(--eo-navy)] hover:bg-[#e5aa10] focus-visible:ring-[var(--eo-gold)] shadow-[0_8px_24px_rgba(247,185,24,0.3)]",
         secondary:
-          "bg-white/10 text-white border border-white/25 hover:bg-white/15 focus-visible:ring-white/60 backdrop-blur-sm",
+          "bg-white/12 text-white border border-white/30 hover:bg-white/20 focus-visible:ring-white/60 backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]",
         outline:
-          "bg-transparent text-[var(--eo-navy)] border border-[var(--eo-border)] hover:border-[var(--eo-slate)] hover:bg-[var(--eo-surface)] focus-visible:ring-[var(--eo-navy)]",
+          "bg-white/40 text-[var(--eo-navy)] border border-white/70 hover:bg-white/70 focus-visible:ring-[var(--eo-navy)] backdrop-blur-md",
         ghost:
-          "bg-transparent text-[var(--eo-navy)] hover:bg-[var(--eo-surface)] focus-visible:ring-[var(--eo-navy)]",
-        navy: "bg-[var(--eo-navy)] text-white hover:bg-[var(--eo-dark-blue)] focus-visible:ring-[var(--eo-navy)] shadow-sm",
+          "bg-transparent text-[var(--eo-navy)] hover:bg-white/40 focus-visible:ring-[var(--eo-navy)]",
+        navy: "bg-[var(--eo-navy)]/90 text-white hover:bg-[var(--eo-dark-blue)] focus-visible:ring-[var(--eo-navy)] shadow-sm backdrop-blur-sm",
       },
       size: {
         default: "min-h-11 px-5 py-2.5",

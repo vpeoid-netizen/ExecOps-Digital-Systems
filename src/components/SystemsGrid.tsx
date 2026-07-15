@@ -30,10 +30,10 @@ export function SystemsGrid() {
     <section
       id="digital-systems"
       aria-labelledby="systems-heading"
-      className="scroll-mt-24 bg-[var(--eo-surface)] py-16 sm:py-20 lg:py-24"
+      className="scroll-mt-28 py-16 sm:py-20 lg:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="glass-panel mx-auto max-w-3xl rounded-3xl px-6 py-8 text-center sm:px-8">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--eo-dark-gold)]">
             Systems Directory
           </p>
