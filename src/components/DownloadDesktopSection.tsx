@@ -106,8 +106,13 @@ export function DownloadDesktopSection() {
           <ul className="mt-2 list-disc space-y-1.5 pl-5">
             <li>
               <strong className="font-semibold text-[var(--eo-navy)]">macOS:</strong>{" "}
-              Open the .dmg, drag the app to Applications. If macOS blocks it,
-              go to System Settings → Privacy &amp; Security → Open Anyway.
+              Open the .dmg, then double-click{" "}
+              <strong className="font-semibold text-[var(--eo-navy)]">
+                Install and Open.command
+              </strong>{" "}
+              (recommended). This installs the app and clears the macOS security
+              quarantine flag. If macOS says the app is damaged or broken, use
+              that installer script instead of opening the .app directly.
             </li>
             <li>
               <strong className="font-semibold text-[var(--eo-navy)]">Windows:</strong>{" "}

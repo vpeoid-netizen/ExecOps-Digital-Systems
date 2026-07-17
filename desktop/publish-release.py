@@ -9,7 +9,7 @@ import urllib.request
 
 OWNER = "vpeoid-netizen"
 REPO = "ExecOps-Digital-Systems"
-TAG = "desktop-v1.0.0"
+TAG = "desktop-v1.0.1"
 ASSETS_DIR = os.path.join(os.path.dirname(__file__), "dist")
 FILES = [
     "ExecOps-Digital-Systems-Mac.dmg",
@@ -54,12 +54,16 @@ def main() -> None:
         body = json.dumps(
             {
                 "tag_name": TAG,
-                "name": "Desktop Apps v1.0.0",
+                "name": "Desktop Apps v1.0.1",
                 "body": (
-                    "Desktop installers for **Executive Operations Digital Systems**.\n\n"
-                    "- **macOS:** `ExecOps-Digital-Systems-Mac.dmg`\n"
+                    "Fixed desktop installers for **Executive Operations Digital Systems**.\n\n"
+                    "- **macOS:** `ExecOps-Digital-Systems-Mac.dmg` (includes **Install and Open.command** to clear Gatekeeper quarantine)\n"
                     "- **Windows:** `ExecOps-Digital-Systems-Windows-Setup.exe`\n\n"
-                    "The app opens the live portal. Linked systems open in your default browser."
+                    "### macOS note\n"
+                    "If macOS says the app is damaged/broken, open the DMG and double-click "
+                    "**Install and Open.command** instead of opening the app directly.\n\n"
+                    "Or run:\n"
+                    "`xattr -cr \"/Applications/ExecOps Digital Systems.app\"`\n"
                 ),
                 "draft": False,
                 "prerelease": False,
