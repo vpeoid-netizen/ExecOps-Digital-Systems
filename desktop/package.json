@@ -1,0 +1,54 @@
+{
+  "name": "execops-digital-systems-desktop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Desktop app for Executive Operations Digital Systems (Partido State University)",
+  "author": "Partido State University - Executive Operations",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "dist:mac": "electron-builder --mac dmg",
+    "dist:win": "electron-builder --win nsis"
+  },
+  "build": {
+    "appId": "ph.edu.parsu.execops.digitalsystems",
+    "productName": "ExecOps Digital Systems",
+    "copyright": "Copyright © Partido State University",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        "dmg"
+      ],
+      "artifactName": "ExecOps-Digital-Systems-Mac.${ext}",
+      "identity": null
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "artifactName": "ExecOps-Digital-Systems-Windows-Setup.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "ExecOps Digital Systems"
+    }
+  },
+  "devDependencies": {
+    "electron": "^37.2.0",
+    "electron-builder": "^26.0.12"
+  }
+}

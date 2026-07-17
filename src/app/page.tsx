@@ -1,6 +1,7 @@
 import { HeroSection } from "@/components/HeroSection";
 import { SystemsGrid } from "@/components/SystemsGrid";
 import { EvaluationAssistantsSection } from "@/components/EvaluationAssistantsSection";
+import { DownloadDesktopSection } from "@/components/DownloadDesktopSection";
 import { AboutSection } from "@/components/AboutSection";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <HeroSection />
       <SystemsGrid />
       <EvaluationAssistantsSection />
+      <DownloadDesktopSection />
       <AboutSection />
     </div>
   );

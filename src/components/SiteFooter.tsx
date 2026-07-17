@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Download } from "lucide-react";
 import { digitalSystems } from "@/data/systems";
+import { DESKTOP_DOWNLOADS } from "@/data/downloads";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -34,6 +35,22 @@ export function SiteFooter() {
             <p className="mt-4 text-sm font-semibold text-[var(--eo-gold)]">
               Executive Operations Digital Systems
             </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              <a
+                href={DESKTOP_DOWNLOADS.mac}
+                className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-white/15 bg-white/10 px-3 text-sm font-semibold text-white transition-colors hover:bg-white/15"
+              >
+                <Download className="h-3.5 w-3.5" aria-hidden="true" />
+                macOS
+              </a>
+              <a
+                href={DESKTOP_DOWNLOADS.windows}
+                className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-white/15 bg-white/10 px-3 text-sm font-semibold text-white transition-colors hover:bg-white/15"
+              >
+                <Download className="h-3.5 w-3.5" aria-hidden="true" />
+                Windows
+              </a>
+            </div>
           </div>
 
           <div>
