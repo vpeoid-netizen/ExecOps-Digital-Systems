@@ -94,7 +94,7 @@ export function SystemCard({ system, index = 0, compact = false }: SystemCardPro
         <div className="flex flex-1 flex-col p-5 sm:p-6">
           {system.developedFor && (
             <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--eo-dark-gold)]">
-              Developed for {system.developedFor}
+              {system.developedFor}
             </p>
           )}
           <h3 className="font-display text-[1.15rem] font-semibold leading-snug text-[var(--eo-navy)] sm:text-[1.25rem]">
