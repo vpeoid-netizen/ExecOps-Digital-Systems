@@ -6,6 +6,7 @@ import {
   GraduationCap,
   BadgeCheck,
   Building2,
+  CalendarDays,
 } from "lucide-react";
 import type { DigitalSystem, FilterCategory } from "@/types/system";
 
@@ -103,6 +104,20 @@ export const digitalSystems: DigitalSystem[] = [
     accent: "slate",
     section: "evaluation",
   },
+  {
+    id: "execom-meeting",
+    title: "Executive Committee Meeting Management System",
+    shortTitle: "EXECOM Meeting Management",
+    category: "Meeting Management",
+    description:
+      "Organize, document, and manage Executive Committee meetings, agendas, and related institutional proceedings.",
+    url: "https://parsu-execom.vercel.app/",
+    icon: CalendarDays,
+    featured: true,
+    accent: "gold",
+    section: "office-of-the-president",
+    developedFor: "Office of the President",
+  },
 ];
 
 export const directorySystems = digitalSystems.filter(
@@ -111,6 +126,10 @@ export const directorySystems = digitalSystems.filter(
 
 export const evaluationSystems = digitalSystems.filter(
   (system) => system.section === "evaluation",
+);
+
+export const officeOfThePresidentSystems = digitalSystems.filter(
+  (system) => system.section === "office-of-the-president",
 );
 
 export function matchesFilter(

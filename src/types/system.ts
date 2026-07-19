@@ -6,7 +6,8 @@ export type SystemCategory =
   | "Performance-Based Bonus"
   | "Strategic Alignment"
   | "Individual Performance Evaluation"
-  | "Organizational Performance Evaluation";
+  | "Organizational Performance Evaluation"
+  | "Meeting Management";
 
 export type FilterCategory =
   | "All Systems"
@@ -27,5 +28,6 @@ export type DigitalSystem = {
   icon: LucideIcon;
   featured?: boolean;
   accent: AccentTone;
-  section: "directory" | "evaluation";
+  section: "directory" | "evaluation" | "office-of-the-president";
+  developedFor?: string;
 };
